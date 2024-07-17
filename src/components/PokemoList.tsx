@@ -4,7 +4,6 @@ import {PokemonCard} from "./PokemonCard.tsx";
 
 
 
-
 export const PokemonList = ()  => {
     const   {
         data: pokemon,
@@ -15,12 +14,10 @@ export const PokemonList = ()  => {
         return <Loader/>
     }
 
-
-
     return (
         <div className="pokemon-list">
-            {pokemon.map((item, ) =>  (
-                <PokemonCard   key={item.name} name={item.name} url={`https://pokeapi.co/api/v2/pokemon/${item.name}`} />
+            {pokemon.map((item  ) =>  (
+                <PokemonCard   key={item.name} name={item.name} url={`https://pokeapi.co/api/v2/pokemon/${item.name} `} />
             ))}
         </div>
     );

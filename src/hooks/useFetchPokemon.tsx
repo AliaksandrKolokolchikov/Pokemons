@@ -1,11 +1,16 @@
 import {useEffect, useState} from "react";
 import axios from 'axios'
 
+type PokemonData = {
+    id: number;
+    name: string;
+}
+
 
 
 export const useFetchPokemon = (url: string) =>{
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState<PokemonData[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(()=>{
         const fetchData=async()=>{

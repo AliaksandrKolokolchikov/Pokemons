@@ -59,7 +59,6 @@ export type Pokemon = {
     sprites: any | Sprites
     stats: any
     weight: number
-
 }
 
 

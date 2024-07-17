@@ -10,7 +10,7 @@ export const PokemonCard = ({name, url}:BaseInfo) => {
     useEffect(()=>{
         const fetchData = async () => {
             try {
-                const response = await axios.get(url);
+                const response = await axios.get<BaseInfo>(url);
                 setPokemonData(response.data);
             }
             catch(err){
@@ -24,7 +24,7 @@ export const PokemonCard = ({name, url}:BaseInfo) => {
             <h3>{name}</h3>
             {pokemonData && (
                 <div className='pokemon-details'>
-                    <img src={pokemonData.sprites} alt={name}/>
+                    <img src={pokemonData.sprites?.front_default} alt={name}/>
                     <p>Height: {pokemonData.height}</p>
                     <p>Weight: {pokemonData.weight}</p>
                     <p>Base Experience: {pokemonData.base_experience}</p>
